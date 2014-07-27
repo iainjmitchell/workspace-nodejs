@@ -10,5 +10,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.provision "chef_solo" do |chef|
     chef.add_recipe "nodejs"
+    chef.json = {
+      "nodejs" => {
+        "version" => "0.10.29"
+      }
+    }
   end
 end
